@@ -1,9 +1,8 @@
 <template>
   <button class="c-button" :class="{[`icon-${iconPosition}`]:true}">
   <!-- <button class="c-button" :class="`icon-${iconPosition}`"> -->
-    <svg v-if="icon" class="icon">
-      <use v-bind:xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <c-icon v-if="icon" :name='icon' class="icon">
+    </c-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -54,6 +53,8 @@ export default {
   &.icon-right {
     > .icon {
       order: 2;
+      margin-right: 0;
+      margin-left: .1em;
     }
     > .content{
       order: 1;
