@@ -5,6 +5,5 @@ Vue.component('c-button',Button)
 new Vue({
   el: '#app',
   data: {
-    message: 'hi'
   }
 })
