@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Aledenn/Cb-UI#readme",
   "dependencies": {
     "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
   }
 }
