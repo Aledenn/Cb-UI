@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Aledenn/Cb-UI/issues"
   },
-  "homepage": "https://github.com/Aledenn/Cb-UI#readme"
+  "homepage": "https://github.com/Aledenn/Cb-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.6"
+  }
 }
