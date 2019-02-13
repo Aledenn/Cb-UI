@@ -1,6 +1,6 @@
 <template>
   <button class="c-button" :class="{[`icon-${iconPosition}`]:true} " @click="onClick">
-    <c-icon v-show="selfLoading" class='loading icon' name='loading'></c-icon>
+    <c-icon v-if="this.loading" v-show="selfLoading" class='loading icon' name='loading'></c-icon>
     <c-icon v-if="icon&&!selfLoading" :name='icon' class="icon">
     </c-icon>
     <div class="content">
@@ -32,8 +32,8 @@ export default {
   },
   methods:{
     onClick(e){
-      // 用于发布自定义事件
-      // this.$emit('click',e)  
+      // 用于发布自定义事件  下面触发click事件
+      this.$emit('click',e)  
       if(this.loading){
         this.selfLoading = !this.selfLoading
       }
