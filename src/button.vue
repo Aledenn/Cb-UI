@@ -1,6 +1,6 @@
 <template>
   <button class="c-button" :class="{[`icon-${iconPosition}`]:true}">
-  <!-- <button class="c-button" :class="`icon-${iconPosition}`"> -->
+    <c-icon class='loading' name='loading'></c-icon>
     <c-icon v-if="icon" :name='icon' class="icon">
     </c-icon>
     <div class="content">
@@ -23,6 +23,14 @@ export default {
 };
 </script>
 <style lang='scss'>
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
 .c-button {
   display: inline-flex;
   justify-content: center;
@@ -59,6 +67,9 @@ export default {
     > .content{
       order: 1;
     }
+  }
+  .loading{
+    animation: spin 5s infinite linear;
   }
 }
 </style>
