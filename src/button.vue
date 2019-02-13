@@ -1,7 +1,7 @@
 <template>
-  <button class="c-button" :class="{[`icon-${iconPosition}`]:true}">
-    <c-icon class='loading' name='loading'></c-icon>
-    <c-icon v-if="icon" :name='icon' class="icon">
+  <button class="c-button" :class="{[`icon-${iconPosition}`]:true} " @click="onClick">
+    <c-icon v-show="icon&&selfLoading" class='loading icon' name='loading'></c-icon>
+    <c-icon v-if="icon&&!selfLoading" :name='icon' class="icon">
     </c-icon>
     <div class="content">
       <slot></slot>
@@ -9,14 +9,32 @@
   </button>
 </template>
 <script>
+import cIcon from './icon.vue'
 export default {
+  name:'cButton',
+  components:{cIcon},
+  data(){
+    return {selfLoading:false}
+  },
   props: {
     icon:{},
+    loading:{
+      type:Boolean,
+      default:false
+    },
     iconPosition:{
       type:String,
       default:'left',
       validator(value){
         return value==='left'||value==='right'
+      }
+    }
+  },
+  methods:{
+    onClick(e){
+      this.$emit('click',e)
+      if(this.loading){
+        this.selfLoading = !this.selfLoading
       }
     }
   }
