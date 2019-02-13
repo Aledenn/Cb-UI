@@ -10,6 +10,12 @@ Vue.component('c-button-group',ButtonGroup)
 new Vue({
   el: '#app',
   data: {
+    loading1:false
+  },
+  methods:{
+    clg(e){
+      console.log('你好啊')
+    }
   }
 })
 
@@ -93,7 +99,7 @@ const expect = chai.expect
 
   vm.$on('click',spy)
   let button = vm.$el
-  
+
   button.click()
   expect(spy).to.have.been.called()
   // cButton.$el.remove()

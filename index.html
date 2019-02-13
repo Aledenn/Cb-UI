@@ -36,14 +36,14 @@
 
 <body>
   <div id="app">
-    <c-button icon='settings' loading>按钮 </c-button>
+    <c-button icon='settings'>按钮</c-button>
     <c-button loading>按钮 </c-button>
-    <c-button icon-position="left" icon='settings' loading>按钮 </c-button>
+    <c-button icon-position="left" icon='settings' :loading='loading1' @click='loading1=!loading1'>按钮 </c-button>
     <c-button icon-position="right" icon='settings'>按钮 </c-button>
     <c-icon name="download"></c-icon>
     <c-button-group>
       <c-button icon='left'>上一页</c-button>
-      <c-button >更多</c-button>
+      <c-button @click='clg'>更多</c-button>
       <c-button icon='right' icon-position='right' loading>下一页</c-button>
     </c-button-group>
     <div id="test"></div>
