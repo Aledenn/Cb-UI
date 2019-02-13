@@ -5,7 +5,15 @@
 </template>
 <script>
 export default {
-  name:'cButtonGroup'
+  name:'cButtonGroup',
+  mounted(){
+    for(let node of this.$el.children){
+      let {nodeName} = node
+      if(nodeName.toLowerCase()!=='button'){
+        console.warn(`c-button-group的子元素应该是g-button,但你你写的是${nodeName}`)
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -14,7 +22,7 @@ export default {
     vertical-align: middle;
     >.c-button{
       border-radius: 0;
-      margin-left: -1px;
+      &:not(:first-child){margin-left: -1px;}
       &:first-child{
         border-top-left-radius: var(--border-radius);
         border-bottom-left-radius:var(--border-radius);
