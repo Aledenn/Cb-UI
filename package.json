@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "npx parcel build test/* --no-minify && karma start --single-run"
+    "test": "npx parcel build test/* --no-minify && karma start --single-run",
+    "BfPublick":"npx parcel build index.js --no-minify"
   },
   "repository": {
     "type": "git",
