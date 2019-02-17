@@ -1,13 +1,13 @@
 {
   "name": "lcb-ui-test",
-  "version": "0.0.1ss",
+  "version": "0.0.1sss",
   "description": "这是一个ui框架",
   "main": "dist/index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
-    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "dev-test": "npx parcel watch test/* --no-cache & karma start",
     "test": "npx parcel build test/* --no-minify && karma start --single-run",
-    "BfPublick":"npx parcel build index.js --no-minify"
+    "build":"npx parcel build index.js --no-minify"
   },
   "repository": {
     "type": "git",
