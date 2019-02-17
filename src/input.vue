@@ -55,8 +55,11 @@ $box-shadow-color: rgba(0, 0, 0, 0.5);
 $red: #f1453d;
 .wrapper {
 	font-size: $font-size;
-	display: inline-block;
-	vertical-align: middle;
+	display: inline-flex;
+	align-items: center;
+	> :not(:last-child) {
+		margin-right: 0.5em;
+	}
 	> input {
 		height: 32px;
 		border: 1px solid $border-color;
