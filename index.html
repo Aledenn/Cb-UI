@@ -31,23 +31,35 @@
     body {
       font-size: var(--font-size);
     }
+    .box{
+      margin: 20px;
+    }
   </style>
 </head>
 
 <body>
   <div id="app">
-    <c-input placeholder="test一下placeholder" style="margin:20px;"></c-input>
-    <c-button icon='settings'>按钮</c-button>
-    <c-button loading>按钮 </c-button>
-    <c-button icon-position="left" icon='settings' :loading='loading1' @click='loading1=!loading1'>按钮 </c-button>
-    <c-button icon-position="right" icon='settings'>按钮 </c-button>
+    <div class="box">
+      <c-input placeholder="test一下placeholder" ></c-input>
+      <c-input placeholder="test一下placeholder"  disabled></c-input>
+      <c-input error="我错了"></c-input>
+      <c-input value="只读" style="margin:20px;" readonly></c-input>
+    </div>
+
+    <div class="box">
+      <c-button icon='settings'>按钮</c-button>
+      <c-button loading>按钮 </c-button>
+      <c-button icon-position="left" icon='settings' :loading='loading1' @click='loading1=!loading1'>按钮 </c-button>
+      <c-button icon-position="right" icon='settings'>按钮 </c-button>
+    </div>
     <c-icon name="download"></c-icon>
-    <c-button-group>
-      <c-button icon='left'>上一页</c-button>
-      <c-button @click='clg'>更多</c-button>
-      <c-button icon='right' icon-position='right' loading>下一页</c-button>
-    </c-button-group>
-    <div id="test"></div>
+    <div class="box">
+      <c-button-group>
+        <c-button icon='left'>上一页</c-button>
+        <c-button @click='clg'>更多</c-button>
+        <c-button icon='right' icon-position='right' loading>下一页</c-button>
+      </c-button-group>
+    </div>
   </div>
 
   <script src="./src/app.js"></script>
