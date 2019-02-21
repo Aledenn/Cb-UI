@@ -72,9 +72,14 @@ describe('Input', () => {
 
 				let event = new Event(eventName)
 				let inputElement = vm.$el.querySelector('input')
+				Object.defineProperty(event, 'target', {
+					value: {
+						value: 'hi'
+					}
+				})
 				inputElement.dispatchEvent(event)
 				// sinon-chai calledWith测参数
-				expect(callback).to.have.been.calledWith(event)
+				expect(callback).to.have.been.calledWith('hi')
 			})
 		})
 	})
