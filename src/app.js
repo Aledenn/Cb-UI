@@ -17,6 +17,9 @@ new Vue({
 	methods: {
 		clg(e) {
 			console.log('你好啊')
+		},
+		inputChange(e) {
+			console.log(e.target.value)
 		}
 	}
 })

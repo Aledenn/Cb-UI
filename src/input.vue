@@ -6,6 +6,10 @@
       :readonly="readonly"
       :value="value"
       type="text"
+      @change="$emit('change',$event)"
+      @input="$emit('input',$event)"
+      @blur="$emit('blur',$event)"
+      @focus="$emit('focus',$event)"
     >
     <template v-if="error">
       <c-icon name="error" class="icon-error"></c-icon>
