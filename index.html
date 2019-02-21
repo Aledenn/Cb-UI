@@ -44,6 +44,9 @@
       <c-input placeholder="test一下placeholder"  disabled></c-input>
       <c-input error="我错了"></c-input>
       <c-input value="只读"  readonly></c-input>
+      <c-input v-model="message"></c-input>
+      <p>{{message}}</p>
+      <button @click="message+=1">+1</button>
     </div>
     <div class="box">
       <c-input value="测试change" @change="inputChange"></c-input>
