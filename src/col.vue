@@ -5,7 +5,6 @@
 </template>
 <script>
 let validator = (value) => {
-	console.log(value)
 	let keys = Object.keys(value)
 	let valid = true
 	keys.forEach((key) => {
@@ -23,8 +22,7 @@ export default {
 		phone: { type: Object, validator },
 		ipad: { type: Object, validator },
 		narrowPc: { type: Object, validator },
-		pc: { type: Object, validator },
-		widePc: { type: Object, validator }
+		pc: { type: Object, validator }
 	},
 	data() {
 		return {
@@ -33,15 +31,14 @@ export default {
 	},
 	computed: {
 		colClass() {
-			let { span, offset, phone, ipad, narrowPc, pc, widePc } = this
+			let { span, offset, phone, ipad, narrowPc, pc } = this
 			return [
 				span && `col-${span}`,
 				offset && `offset-${offset}`,
 				phone && `col-phone-${phone.span}`,
 				ipad && `col-ipad-${ipad.span}`,
 				narrowPc && `col-narrow-pc-${narrowPc.span}`,
-				pc && `col-pc-${pc.span}`,
-				widePc && `col-wide-pc-${widePc.span}`
+				pc && `col-pc-${pc.span}`
 			]
 		},
 		colStyle() {
@@ -119,20 +116,6 @@ export default {
 			}
 		}
 		$class-prefix: offset-pc-;
-		@for $n from 1 through 24 {
-			&.#{$class-prefix}#{$n} {
-				margin-left: ($n/24) * 100%;
-			}
-		}
-	}
-	@media (min-width: 1201px) {
-		$class-prefix: col-width-pc;
-		@for $n from 1 through 24 {
-			&.#{$class-prefix}#{$n} {
-				width: ($n/24) * 100%;
-			}
-		}
-		$class-prefix: offset-width-pc;
 		@for $n from 1 through 24 {
 			&.#{$class-prefix}#{$n} {
 				margin-left: ($n/24) * 100%;
