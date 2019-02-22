@@ -12,21 +12,6 @@
   *,*::before,*::after{box-sizing:border-box}
   ```
   IE8以上浏览器都支持该样式
-
-  你还需要设置默认颜色等变量(后续会改为SCSS等变量)
-  ```
-      :root {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-      }
-  ```
-  ID15以上浏览器都支持该样式
 2. 安装cb-ui
 ```
 npm i --save lcb-ui-test
