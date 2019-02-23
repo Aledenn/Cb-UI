@@ -1,132 +1,64 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>CB-ui</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			#app {
+				margin: 20px;
+			}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>CB-ui</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+			.demo {
+				border: 1px solid #666;
+				min-height: 100px;
+			}
+		</style>
+	</head>
 
-    img{
-      min-width: 100%;
-    }
+	<body>
+		<div id="app">
+			<c-layout style="height:100vh">
+				<c-header class="demo">Header</c-header>
+				<c-content class="demo">Content</c-content>
+				<c-footer class="demo">Footer</c-footer>
+			</c-layout>
 
-    #app {
-      margin: 20px;
-    }
-
-    body {
-      font-size: var(--font-size);
-    }
-    .box{
-      margin: 20px;
-    }
-
-    .demoBox{
-      min-height: 50px;
-      background: grey;
-      border: 1px solid red;
-    }
-
-    .demo{
-      border: 1px solid #666;
-    }
-  
-  </style>
-</head>
-
-<body>
-  <div id="app">
-      <div id="components-layout-demo-basic">
-          <c-layout>
-            <c-layout-header>Header</c-layout-header>
-            <c-layout-content>Content</c-layout-content>
-            <c-layout-footer>Footer</c-layout-footer>
+			<c-layout style="height:100vh;margin-top: 20px">
+				<c-header class="demo">Header</c-header>
+				<c-layout>
+					<c-sider class="demo">Sider</c-sider>
+					<c-content class="demo">Content</c-content>
+				</c-layout>
+				<c-footer class="demo">Footer</c-footer>
+			</c-layout>
+			      
+			<c-layout style="height:100vh;margin-top: 20px">          
+            <c-header class="demo">Header</c-header>
+            <c-layout>
+              <c-content class="demo">Content</c-content>
+              <c-sider class="demo">Sider</c-sider>
+            </c-layout>
+            <c-footer class="demo">Footer</c-footer>
           </c-layout>
       
-          <c-layout>
-            <c-layout-header>Header</c-layout-header>
+			<c-layout style="height:100vh;margin-top: 20px">
+            <c-sider class="demo">Sider</c-sider>
             <c-layout>
-              <c-layout-sider>Sider</c-layout-sider>
-              <c-layout-content>Content</c-layout-content>
+              <c-header class="demo">Header</c-header>
+              <c-content class="demo">Content</c-content>
+              <c-footer class="demo">Footer</c-footer>
             </c-layout>
-            <c-layout-footer>Footer</c-layout-footer>
-          </c-layout>
-      
-          <c-layout>
-            <c-layout-header>Header</c-layout-header>
-            <c-layout>
-              <c-layout-content>Content</c-layout-content>
-              <c-layout-sider>Sider</c-layout-sider>
-            </c-layout>
-            <c-layout-footer>Footer</c-layout-footer>
-          </c-layout>
-      
-          <c-layout>
-            <c-layout-sider>Sider</c-layout-sider>
-            <c-layout>
-              <c-layout-header>Header</c-layout-header>
-              <c-layout-content>Content</c-layout-content>
-              <c-layout-footer>Footer</c-layout-footer>
-            </c-layout>
-          </c-layout>
-        </div>
-    <!-- <div style="border:1px solid red">
-      <c-row>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-        <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
-      </c-row>
-    <c-row gutter='20'>
-      <c-col >1</c-col>
-      <c-col >2</c-col>
-    </c-row>
-    <c-row>
-        <c-col span="2">1</c-col>
-        <c-col span='2' offset="2">2</c-col>
-        <c-col span='2'>2</c-col>
-        <c-col span='2'>2</c-col>
-      </c-row>
-    </div>
-    <div class="box">
-      <c-input placeholder="test一下placeholder" ></c-input>
-      <c-input placeholder="test一下placeholder"  disabled></c-input>
-      <c-input error="我错了"></c-input>
-      <c-input value="只读"  readonly></c-input>
-      <c-input v-model="message"></c-input>
-      <p>{{message}}</p>
-      <button @click="message+=1">+1</button>
-    </div>
-    <div class="box">
-      <c-input value="测试change" @change="inputChange"></c-input>
-    </div>
-    <div class="box">
-      <c-button icon='settings'>按钮</c-button>
-      <c-button loading>按钮 </c-button>
-      <c-button icon-position="left" icon='settings' :loading='loading1' @click='loading1=!loading1'>按钮 </c-button>
-      <c-button icon-position="right" icon='settings'>按钮 </c-button>
-    </div>
-    <c-icon name="download"></c-icon>
-    <div class="box">
-      <c-button-group>
-        <c-button icon='left'>上一页</c-button>
-        <c-button @click='clg'>更多</c-button>
-        <c-button icon='right' icon-position='right' loading>下一页</c-button>
-      </c-button-group>
-    </div> -->
-  </div>
+          </c-layout> 
+		</div>
 
-  <script src="./src/app.js"></script>
-  <!-- <script src="https://at.alicdn.com/t/font_1042193_8jo0in4a8u9.js"></script> -->
-</body>
-
+		<script src="./src/app.js"></script>
+		<!-- <script src="https://at.alicdn.com/t/font_1042193_8jo0in4a8u9.js"></script> -->
+	</body>
 </html>
