@@ -16,16 +16,6 @@
     img{
       min-width: 100%;
     }
-    /* :root {
-      --button-height: 32px;
-      --font-size: 14px;
-      --button-bg: white;
-      --button-active-bg: #eee;
-      --border-radius: 4px;
-      --color: #333;
-      --border-color: #999;
-      --border-color-hover: #666;
-    } */
 
     #app {
       margin: 20px;
@@ -53,7 +43,41 @@
 
 <body>
   <div id="app">
-    <div style="border:1px solid red">
+      <div id="components-layout-demo-basic">
+          <c-layout>
+            <c-layout-header>Header</c-layout-header>
+            <c-layout-content>Content</c-layout-content>
+            <c-layout-footer>Footer</c-layout-footer>
+          </c-layout>
+      
+          <c-layout>
+            <c-layout-header>Header</c-layout-header>
+            <c-layout>
+              <c-layout-sider>Sider</c-layout-sider>
+              <c-layout-content>Content</c-layout-content>
+            </c-layout>
+            <c-layout-footer>Footer</c-layout-footer>
+          </c-layout>
+      
+          <c-layout>
+            <c-layout-header>Header</c-layout-header>
+            <c-layout>
+              <c-layout-content>Content</c-layout-content>
+              <c-layout-sider>Sider</c-layout-sider>
+            </c-layout>
+            <c-layout-footer>Footer</c-layout-footer>
+          </c-layout>
+      
+          <c-layout>
+            <c-layout-sider>Sider</c-layout-sider>
+            <c-layout>
+              <c-layout-header>Header</c-layout-header>
+              <c-layout-content>Content</c-layout-content>
+              <c-layout-footer>Footer</c-layout-footer>
+            </c-layout>
+          </c-layout>
+        </div>
+    <!-- <div style="border:1px solid red">
       <c-row>
         <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
         <c-col class='demo' :span='22' :phone="{span:24}"  :narrow-pc="{span:8}"   >1</c-col>
@@ -98,7 +122,7 @@
         <c-button @click='clg'>更多</c-button>
         <c-button icon='right' icon-position='right' loading>下一页</c-button>
       </c-button-group>
-    </div>
+    </div> -->
   </div>
 
   <script src="./src/app.js"></script>
