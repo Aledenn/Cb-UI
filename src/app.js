@@ -31,20 +31,20 @@ new Vue({
 		loading1: false,
 		message: 'hi'
 	},
-	created() {
-		this.$toast('<strong>我是 messageasdsfsdfsafsfsfsdfsaffsfds</strong>', {
-			autoCloseDelay: 50,
-			position: 'middle',
-			closeButton: {
-				text: '知道了',
-				callback: function(toast) {
-					console.log(toast)
-				}
-			},
-			enableHtml: true
-		})
-	},
+	created() {},
 	methods: {
-		showToast() {}
+		showToast() {
+			this.$toast(`<strong>我是${Math.random() * 100} </strong>`, {
+				autoCloseDelay: 50,
+				position: 'middle',
+				closeButton: {
+					text: '知道了',
+					callback: function(toast) {
+						console.log(toast)
+					}
+				},
+				enableHtml: true
+			})
+		}
 	}
 })
