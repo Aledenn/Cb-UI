@@ -33,10 +33,19 @@ new Vue({
 	},
 	created() {},
 	methods: {
-		showToast() {
+		showToast1() {
+			this.showToast('top')
+		},
+		showToast2() {
+			this.showToast('middle')
+		},
+		showToast3() {
+			this.showToast('bottom')
+		},
+		showToast(position) {
 			this.$toast(`<strong>我是${Math.random() * 100} </strong>`, {
 				autoCloseDelay: 50,
-				position: 'middle',
+				position,
 				closeButton: {
 					text: '知道了',
 					callback: function(toast) {

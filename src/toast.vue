@@ -1,11 +1,13 @@
 <template>
-  <div class="toast" ref="wrapper" :class="toastClass">
-    <div class="message">
-      <slot v-if="!enableHtml"></slot>
-      <div v-else v-html="$slots.default[0]"></div>
+  <div class="toast-wrap" :class="toastClass">
+    <div class="toast" ref="wrapper">
+      <div class="message">
+        <slot v-if="!enableHtml"></slot>
+        <div v-else v-html="$slots.default[0]"></div>
+      </div>
+      <div class="line" ref="line"></div>
+      <span v-if="closeButton" class="close" @click="onClickClose">{{closeButton.text}}</span>
     </div>
-    <div class="line" ref="line"></div>
-    <span v-if="closeButton" class="close" @click="onClickClose">{{closeButton.text}}</span>
   </div>
 </template>
 <script>
@@ -90,12 +92,70 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slide-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.toast-wrap {
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	$animation-duration: 1s;
+	&.position-top {
+		top: 5px;
+		transform: translateX(-50%);
+		.toast {
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+			animation: slide-down $animation-duration;
+		}
+	}
+	&.position-bottom {
+		bottom: 5px;
+		transform: translateX(-50%);
+		.toast {
+			border-bottom-right-radius: 0;
+			animation: slide-up $animation-duration;
+			border-bottom-left-radius: 0;
+		}
+	}
+	&.position-middle {
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		.toast {
+			animation: fade-in $animation-duration;
+		}
+	}
+}
 .toast {
 	font-size: $font-size;
 	min-height: $toast-min-height;
 	line-height: 1.8;
-	position: fixed;
-	left: 50%;
 	display: flex;
 	color: white;
 	align-items: center;
@@ -115,18 +175,6 @@ $toast-bg: rgba(0, 0, 0, 0.75);
 		background: white;
 		border-left: 1px solid #666;
 		margin-left: 16px;
-	}
-	&.position-top {
-		top: 0;
-		transform: translateX(-50%);
-	}
-	&.position-bottom {
-		bottom: 10px;
-		transform: translateX(-50%);
-	}
-	&.position-middle {
-		top: 50%;
-		transform: translateX(-50%);
 	}
 }
 </style>
