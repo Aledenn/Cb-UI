@@ -39,40 +39,8 @@
 
 	<body>
 		<div id="app">
-			<c-layout style="height:100vh">
-				<c-header class="demo">Header</c-header>
-				<c-content class="demo">Content</c-content>
-				<c-footer class="demo">Footer</c-footer>
-			</c-layout>
-
-			<c-layout style="height:100vh;margin-top: 20px">
-				<c-header class="demo">Header</c-header>
-				<c-layout>
-					<c-sider class="demo">Sider</c-sider>
-					<c-content class="demo">Content</c-content>
-				</c-layout>
-				<c-footer class="demo">Footer</c-footer>
-			</c-layout>
-			      
-			<c-layout style="height:100vh;margin-top: 20px">          
-            <c-header class="demo">Header</c-header>
-            <c-layout>
-              <c-content class="demo">Content</c-content>
-              <c-sider class="demo">Sider</c-sider>
-            </c-layout>
-            <c-footer class="demo">Footer</c-footer>
-          </c-layout>
-      
-			<c-layout style="height:100vh;margin-top: 20px">
-            <c-sider class="demo">Sider</c-sider>
-            <c-layout>
-              <c-header class="demo">Header</c-header>
-              <c-content class="demo">Content</c-content>
-              <c-footer class="demo">Footer</c-footer>
-            </c-layout>
-          </c-layout> 
+			<button @click="showToast">点我</button>
 		</div>
-
 		<script src="./src/app.js"></script>
 		<!-- <script src="https://at.alicdn.com/t/font_1042193_8jo0in4a8u9.js"></script> -->
 	</body>
