@@ -14,11 +14,8 @@ export default {
 		}
 	},
 	mounted() {
-		console.log(this.$children)
 		this.$children.forEach((vm) => {
-			console.log(vm.$options.name)
 			if (vm.$options.name === 'cSider') {
-				console.log(this.layoutClass)
 				this.layoutClass['has-sider'] = true
 			}
 		})
