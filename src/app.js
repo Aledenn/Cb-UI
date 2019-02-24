@@ -44,7 +44,7 @@ new Vue({
 		},
 		showToast(position) {
 			this.$toast(`<strong>我是${Math.random() * 100} </strong>`, {
-				autoCloseDelay: 50,
+				autoClose: 4,
 				position,
 				closeButton: {
 					text: '知道了',
