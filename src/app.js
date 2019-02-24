@@ -10,6 +10,7 @@ import Header from './header'
 import Sider from './sider'
 import Content from './content'
 import Footer from './footer'
+import plugin from './plugin'
 
 Vue.component('c-icon', Icon)
 Vue.component('c-button', Button)
@@ -22,6 +23,7 @@ Vue.component('c-header', Header)
 Vue.component('c-sider', Sider)
 Vue.component('c-content', Content)
 Vue.component('c-footer', Footer)
+Vue.use(plugin)
 
 new Vue({
 	el: '#app',
@@ -29,99 +31,18 @@ new Vue({
 		loading1: false,
 		message: 'hi'
 	},
+	created() {
+		this.$toast('我是 message', {
+			closeButton: {
+				text: '知道了',
+				callback: function(toast) {
+					toast.log()
+					console.log('callback')
+				}
+			}
+		})
+	},
 	methods: {
-		clg(e) {
-			console.log('你好啊')
-		},
-		inputChange(e) {
-			console.log(e.target.value)
-		}
+		showToast() {}
 	}
 })
-
-import chai from 'chai'
-import spies from 'chai-spies'
-chai.use(spies)
-
-const expect = chai.expect
-// 单元测试
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings'
-		}
-	})
-	vm.$mount()
-	let useElement = vm.$el.querySelector('use')
-	let href = useElement.getAttribute('xlink:href')
-	expect(href).to.eq('#i-settings')
-	vm.$el.remove()
-	vm.$destroy()
-}
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings',
-			loading: true
-		}
-	})
-	vm.$mount()
-	let useElement = vm.$el.querySelector('use')
-	let href = useElement.getAttribute('xlink:href')
-	expect(href).to.eq('#i-loading')
-	vm.$el.remove()
-	vm.$destroy()
-}
-{
-	const div = document.createElement('div')
-	document.body.appendChild(div)
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings'
-		}
-	})
-	vm.$mount(div)
-	let svg = vm.$el.querySelector('svg')
-	let { order } = window.getComputedStyle(svg) //不渲染没有加载css css所有属性值都是字符串
-	expect(order).to.eq('1')
-	vm.$el.remove()
-	vm.$destroy()
-}
-{
-	const div = document.createElement('div')
-	document.body.appendChild(div)
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings',
-			iconPosition: 'right'
-		}
-	})
-	vm.$mount(div)
-	let svg = vm.$el.querySelector('svg')
-	let { order } = window.getComputedStyle(svg) //不渲染没有加载css css所有属性值都是字符串
-	expect(order).to.eq('2')
-	vm.$el.remove()
-	vm.$destroy()
-}
-{
-	const Constructor = Vue.extend(Button)
-	const vm = new Constructor({
-		propsData: {
-			icon: 'settings'
-		}
-	})
-	vm.$mount()
-	let spy = chai.spy(function() {})
-
-	vm.$on('click', spy)
-	let button = vm.$el
-
-	button.click()
-	expect(spy).to.have.been.called()
-	// cButton.$el.remove()
-	// cButton.$destroy()
-}
