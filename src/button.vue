@@ -2,7 +2,7 @@
   <button class="c-button" :class="{[`icon-${iconPosition}`]:true} " @click="onClick">
     <c-icon v-if="loading" class="loading icon" name="loading"></c-icon>
     <c-icon v-if="icon&&!loading" :name="icon" class="icon"></c-icon>
-    <div class="content">
+    <div class="c-button-content">
       <slot></slot>
     </div>
   </button>
@@ -37,6 +37,13 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+$font-size: 14px;
+$button-height: 32px;
+$border-radius: 4px;
+$border-color: #999;
+$button-bg: white;
+$border-color-hover: #666;
+$button-active-bg: #eee;
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -46,14 +53,6 @@ export default {
 	}
 }
 .c-button {
-	$font-size: 14px;
-	$button-height: 32px;
-	$border-radius: 4px;
-	$border-color: #999;
-	$button-bg: white;
-	$border-color-hover: #666;
-	$button-active-bg: #eee;
-
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -64,6 +63,9 @@ export default {
 	border-radius: $border-radius;
 	border: 1px solid $border-color;
 	background: $button-bg;
+	// > .c-button-content {
+	// 	padding: 0;
+	// }
 	&:hover {
 		border-color: $border-color-hover;
 	}
@@ -77,7 +79,7 @@ export default {
 		order: 1;
 		margin-right: 0.1em;
 	}
-	> .content {
+	> .c-button-content {
 		order: 2;
 	}
 	&.icon-right {
@@ -86,7 +88,7 @@ export default {
 			margin-right: 0;
 			margin-left: 0.1em;
 		}
-		> .content {
+		> .c-button-content {
 			order: 1;
 		}
 	}
