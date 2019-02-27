@@ -1,15 +1,16 @@
 {
-  "name": "lcb-ui-test",
-  "version": "0.0.1sss",
+  "name": "lcb-ui",
+  "version": "0.0.2",
   "description": "这是一个ui框架",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "dev-test": "npx parcel watch test/* --no-cache & karma start",
     "test": "npx parcel build test/* --no-minify && karma start --single-run",
     "build": "npx parcel build index.js --no-minify",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy":"./deploy.sh"
   },
   "repository": {
     "type": "git",

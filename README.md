@@ -14,12 +14,12 @@
   IE8以上浏览器都支持该样式
 2. 安装cb-ui
 ```
-npm i --save lcb-ui-test
+npm i --save lcb-ui
 ```
 
 3. 引入cb-ui
 ```
-import {Button,ButtonGroup,Icon} from 'lcb-ui-test'
+import {Button,ButtonGroup,Icon} from 'lcb-ui'
 import 'lcb-ui-test/dist/index.css'
 export default {
   name: 'app',

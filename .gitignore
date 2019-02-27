@@ -2,3 +2,4 @@
 /.cache
 /dist
 /docs的副本
+/docs/.vuepress/dist
