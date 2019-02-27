@@ -1,8 +1,8 @@
 {
   "name": "lcb-ui",
-  "version": "0.0.2",
+  "version": "0.0.2s",
   "description": "这是一个ui框架",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "dev-test": "npx parcel watch test/* --no-cache & karma start",
