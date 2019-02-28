@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="c-header">
     <slot></slot>
   </div>
 </template>

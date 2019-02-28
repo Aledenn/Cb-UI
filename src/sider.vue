@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <div class="sider" v-show="showSider">
+    <div class="c-sider" v-show="showSider">
       <slot></slot>
       <button class="close" @click="showSider=!showSider">X</button>
     </div>
@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sider {
+.c-sider {
 	position: relative;
 	& > .close {
-		width: 10%;
+		width: 20px;
 		position: absolute;
 		top: 0;
 		right: 0;
