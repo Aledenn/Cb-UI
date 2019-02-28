@@ -1,6 +1,6 @@
 {
   "name": "lcb-ui",
-  "version": "0.0.2s",
+  "version": "0.0.4",
   "description": "这是一个ui框架",
   "main": "dist/index.js",
   "scripts": {

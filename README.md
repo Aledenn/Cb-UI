@@ -31,8 +31,4 @@ export default {
 ```
 #### 文档
 
-#### 提问
-
-#### 变更记录
-
-#### 联系方式
+https://aledenn.github.io/Cb-UI/
