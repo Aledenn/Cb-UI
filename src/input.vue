@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper" :class="{error}">
     <input
+      class="c-input"
       :placeholder="placeholder"
       :disabled="disabled"
       :readonly="readonly"
@@ -64,8 +65,8 @@ $red: #f1453d;
 	> :not(:last-child) {
 		margin-right: 0.5em;
 	}
-	> input {
-		height: 32px;
+	> .c-input {
+		height: 1.2em;
 		border: 1px solid $border-color;
 		border-radius: $border-radius;
 		padding: 8px 9px;
@@ -85,7 +86,7 @@ $red: #f1453d;
 		}
 	}
 	&.error {
-		> input {
+		> .c-input {
 			border-color: $red;
 		}
 	}

@@ -11,7 +11,7 @@ export default {
 			let { nodeName } = node
 			if (nodeName.toLowerCase() !== 'button') {
 				console.warn(
-					`c-button-group的子元素应该是g-button,但你你写的是${nodeName}`
+					`c-button-group的子元素应该是c-button,但你你写的是${nodeName}`
 				)
 			}
 		}
