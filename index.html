@@ -19,7 +19,7 @@
 				border: 1px solid #666;
 				min-height: 100px;
 			}
-			.sider {
+			.c-sider {
 				background: #333;
 				width: 150px;
 			}
@@ -27,11 +27,11 @@
 			.sider.slide-leave-to {
 				margin-left: -150px;
 			}
-			.header {
+			.c-header,.c-footer {
 				background: #999;
 				height: 100px;
 			}
-			.footer {
+			.c-content {
 				background: #ccc;
 				height: 50px;
 			}
@@ -44,7 +44,15 @@
 
 	<body>
 		<div id="app">
-				<c-button>默认按钮</c-button>
+				<c-layout>
+						<c-header></c-header>
+							<c-layout>
+								<c-sider></c-sider>
+									<c-content></c-content>
+							</c-layout>
+
+						<c-footer></c-footer>
+					</c-layout>
 		</div>
 		<script src="./src/app.js"></script>
 		<!-- <script src="https://at.alicdn.com/t/font_1042193_8jo0in4a8u9.js"></script> -->

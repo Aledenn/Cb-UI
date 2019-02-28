@@ -14,7 +14,13 @@ module.exports = {
 			'/quick-start/',
 			{
 				title: '组件',
-				children: ['components/icon', '/components/button', '/components/input']
+				children: [
+					'/components/icon',
+					'/components/button',
+					'/components/input',
+					'/components/layout',
+					'/components/grid'
+				]
 			}
 		]
 	}
