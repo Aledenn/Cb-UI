@@ -14,7 +14,7 @@ module.exports = {
 			'/quick-start/',
 			{
 				title: '组件',
-				children: ['components/icon', '/components/button']
+				children: ['components/icon', '/components/button', '/components/input']
 			}
 		]
 	}
