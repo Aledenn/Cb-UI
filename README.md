@@ -12,6 +12,7 @@
   *,*::before,*::after{box-sizing:border-box}
   ```
   IE8以上浏览器都支持该样式
+
 2. 安装cb-ui
 ```
 npm i --save lcb-ui
@@ -20,7 +21,7 @@ npm i --save lcb-ui
 3. 引入cb-ui
 ```
 import {Button,ButtonGroup,Icon} from 'lcb-ui'
-import 'lcb-ui-test/dist/index.css'
+import 'lcb-ui/dist/index.css'
 export default {
   name: 'app',
   components: {
